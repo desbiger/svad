@@ -39,6 +39,8 @@
 
 
 
+
+
         <div class="form-box-2">
             <span>Фамилия:</span>
             <input size="30" type="text" name="surname_Groom" value="<?= $current_user['LAST_NAME'] ?>"
