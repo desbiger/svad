@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /bitrix/admin/
+Disallow: /admin/
+Disallow: /bitrix/
+Host: newlyweds-club.ru
