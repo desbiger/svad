@@ -141,7 +141,7 @@
 			<?endif;?>
 		</div>
 
-		<?if($vote_begin <= $time):?>
+		<?if($vote_begin == $time):?>
 		<div class="content-box">
 			<?
 			$url = '/contest/'.$arResult['IBLOCK_SECTION_ID'].'/'.$arResult['ID'].'/';
