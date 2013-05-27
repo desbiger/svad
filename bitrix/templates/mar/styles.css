@@ -2300,6 +2300,11 @@ background: #fff\0
     display: inline;
 }
 
+.marg1{
+    margin-top: 10px;
+    display: inline;
+}
+
 .opac {
     opacity: 0.7;
 }
@@ -2348,4 +2353,24 @@ background: #fff\0
 
 .new_link:hover{
     text-decoration: none;
+}
+
+.datetime .datetime{
+    background: url("images/input-b.png") repeat-x scroll 0 0 transparent;
+    border: 1px solid #D0D0D0;
+    color: #E6A2B7;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    height: 33px;
+    margin: 0;
+    padding: 0 10px;
+    width: 200px;
+}
+img.calendar-icon {
+    border: 0 none;
+    cursor: pointer;
+    height: 19px;
+    margin: 7px;
+    vertical-align: top;
+    width: 19px;
 }

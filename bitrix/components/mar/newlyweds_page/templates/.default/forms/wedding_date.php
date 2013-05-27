@@ -6,20 +6,47 @@
 </div>
 
 
+
+
 <h3 class="statii">Введите Дату свадьбы:</h3>
 
-<form method="post" action="" name="regform" enctype="multipart/form-data">
-
+<!--<form method="post" action="" name="regform" enctype="multipart/form-data">-->
+<form id="profile_edit" method="post" name="form1" action=""
+      enctype="multipart/form-data">
 
     <div class="fields integer" id="main_UF_WED_DATE">
         <div class="fields datetime">
 
-<?
-            if($_REQUEST['date_fld']){$valueInput = $_REQUEST['date_fld'];}
-            else {
-                $valueInput = '';
-            }
-?>
+            <?//
+            //            if($_REQUEST['date_fld']){$valueInput = $_REQUEST['date_fld'];}
+            //            else {
+            //                $valueInput = '';
+            //            }
+            //?>
+            <?
+//            ob_start();
+            ?> <?$APPLICATION->IncludeComponent(
+                "mycomponent:main.profile",
+                "profile_edit",
+                Array(
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "N",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "SET_TITLE" => "Y",
+                    "USER_PROPERTY" => array(0=>"UF_GROUP",1=>"UF_STATUS",2=>"UF_CITY",3=>"UF_SKYPE",4=>"UF_WED_DATE"),
+                    "SEND_INFO" => "N",
+                    "CHECK_RIGHTS" => "N",
+                    "USER_PROPERTY_NAME" => "",
+                    "AJAX_OPTION_ADDITIONAL" => ""
+                )
+            );?> <?
+//            $ob_result = ob_get_contents();
+
+//            ?><!-- --><?//if(!($user = mar_getUser())) {	die(); }?>
+
+            <? $valueInput = $arResult['user']['UF_WED_DATE']?>
+
             <?$APPLICATION->IncludeComponent("bitrix:main.calendar", "", Array(
                     "SHOW_INPUT" => "Y",
                     "FORM_NAME" => "",
@@ -33,12 +60,15 @@
             );?>
 
 
-
         </div>
     </div>
 
-    <input class="button marg" type="submit" value="Сохранить" name="submit">
+<!--    <input class="button marg" type="submit" value="Сохранить" name="save">-->
+    <input class="button marg" type="submit" name="save"
+           value="<?= (($arResult["ID"] > 0) ? GetMessage("MAIN_SAVE") : GetMessage("MAIN_ADD")) ?>">
 </form>
+
+
 
 
 <br/>
@@ -227,6 +257,8 @@ while ($arUser = $rsUsers->Fetch()) {
 
     <?=$arResult['navigation'];?>
 
-</div>
 
 </div>
+</div>
+
+
